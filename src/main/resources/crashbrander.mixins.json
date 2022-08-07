@@ -1,0 +1,14 @@
+{
+    "required": true,
+    "package": "xyz.deftu.crashbrander.mixins",
+    "compatibilityLevel": "JAVA_16",
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "client": [
+        "MinecraftClientMixin"
+    ],
+    "server": [
+        "IntegratedServerMixin"
+    ]
+}

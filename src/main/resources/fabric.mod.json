@@ -1,0 +1,36 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${mod_version}",
+    "name": "${mod_name}",
+    "description": "A crash branding mod for modpacks, especially good for debugging!",
+    "authors": [
+        "Deftu"
+    ],
+    "icon": "assets/crashbrander/logo.png",
+    "contact": {
+        "homepage": "https://deftu.xyz/",
+        "issues": "https://github.com/Deftu/${mod_name}/issues",
+        "sources": "https://github.com/Deftu/${mod_name}"
+    },
+    "license": "LGPLv3.0",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            {
+                "adapter": "kotlin",
+                "value": "xyz.deftu.crashbrander.CrashBrander"
+            }
+        ]
+    },
+    "mixins": [
+        "crashbrander.mixins.json"
+    ],
+    "depends": {
+        "fabric": "*",
+        "fabricloader": ">=0.14.8",
+        "fabric-language-kotlin": ">=1.8.1+kotlin.1.7.0",
+        "minecraft": "~${mc_version}",
+        "java": ">=17"
+    }
+}
