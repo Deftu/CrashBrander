@@ -21,6 +21,12 @@
                 "adapter": "kotlin",
                 "value": "xyz.deftu.crashbrander.CrashBrander"
             }
+        ],
+        "preLaunch": [
+            {
+                "adapter": "kotlin",
+                "value": "xyz.deftu.crashbrander.CrashBranderPreLaunch"
+            }
         ]
     },
     "mixins": [
