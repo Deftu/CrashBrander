@@ -1,7 +1,3 @@
-import com.modrinth.minotaur.dependencies.ModDependency
-import com.modrinth.minotaur.dependencies.DependencyType
-import xyz.unifycraft.gradle.tools.CurseDependency
-
 plugins {
     java
     kotlin("jvm")

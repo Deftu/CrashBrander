@@ -5,14 +5,12 @@ import org.slf4j.LoggerFactory
 import xyz.deftu.crashbrander.config.Config
 
 object CrashBranderPreLaunch : PreLaunchEntrypoint {
-    private val logger = LoggerFactory.getLogger("Crash Brander")
-
     override fun onPreLaunch() {
         val config = Config.INSTANCE
         if (!config.enabled || !config.printTypes.contains(Config.PrintType.LOGS))
             return
 
-        logger.info("CrashBrander log printing:\n${buildString {
+        CrashBranderConstants.logger.info("CrashBrander log printing:\n${buildString {
             append("-- Pack Branding --").append("\n")
             append("Details:").append("\n")
             appendInfo(config.name != null, "Name", config.name)

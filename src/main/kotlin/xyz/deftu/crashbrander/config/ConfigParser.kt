@@ -2,10 +2,12 @@ package xyz.deftu.crashbrander.config
 
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonToken
+import xyz.deftu.crashbrander.CrashBranderConstants
 import java.io.StringReader
 
 object ConfigParser {
     fun parse(input: String): Config {
+        CrashBranderConstants.logger.info("Parsing config${if (CrashBranderConstants.debug) " from JSON ($input)" else ""}.")
         JsonReader(StringReader(input)).use { reader ->
             val token = reader.peek()
             if (token != JsonToken.BEGIN_OBJECT)
@@ -60,6 +62,10 @@ object ConfigParser {
                         if (token != JsonToken.STRING)
                             throw InvalidConfigException("Config#support should be a string!")
                         support = reader.nextString()
+                    }
+                    else -> {
+                        CrashBranderConstants.logger.warn("Unknown key-value found... Ignoring. ($currentName)")
+                        reader.skipValue()
                     }
                 }
             }
