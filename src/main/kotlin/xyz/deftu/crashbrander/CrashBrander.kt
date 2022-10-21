@@ -15,8 +15,10 @@ object CrashBrander : ModInitializer {
             return
 
         val section = report.addElement("Pack Branding")
-        if (!config.name.isNullOrBlank()) section.add("Name", config.name)
-        if (!config.version.isNullOrBlank()) section.add("Version", config.version)
+        val name = config.getModpackName()
+        val version = config.getModpackVersion()
+        if (!name.isNullOrBlank()) section.add("Name", name)
+        if (!version.isNullOrBlank()) section.add("Version", version)
         if (!config.author.isNullOrBlank()) section.add("Author", config.author)
         if (!config.website.isNullOrBlank()) section.add("Website", config.website)
         if (!config.support.isNullOrBlank()) section.add("Support", config.support)
