@@ -13,7 +13,7 @@
         "issues": "https://github.com/Deftu/${mod_name}/issues",
         "sources": "https://github.com/Deftu/${mod_name}"
     },
-    "license": "LGPL 3.0",
+    "license": "LGPL-3.0",
     "environment": "*",
     "entrypoints": {
         "main": [
@@ -30,11 +30,12 @@
         ]
     },
     "mixins": [
-        "crashbrander.mixins.json"
+        "${mod_id}.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.14.9",
         "fabric-language-kotlin": ">=1.8.2+kotlin.1.7.10",
+        "deftulib": ">=1.0.0",
         "minecraft": "~${mc_version}",
         "java": ">=17"
     }

@@ -2,25 +2,25 @@ plugins {
     java
     kotlin("jvm")
     kotlin("plugin.serialization")
-    id("xyz.unifycraft.gradle.multiversion")
-    id("xyz.unifycraft.gradle.tools")
-    id("xyz.unifycraft.gradle.tools.loom")
-    id("xyz.unifycraft.gradle.tools.shadow")
+    id("xyz.enhancedpixel.gradle.multiversion")
+    id("xyz.enhancedpixel.gradle.tools")
+    id("xyz.enhancedpixel.gradle.tools.loom")
+    id("xyz.enhancedpixel.gradle.tools.shadow")
 }
 
 loomHelper {
-    disableRunConfigs(xyz.unifycraft.gradle.utils.GameSide.SERVER)
+    disableRunConfigs(xyz.enhancedpixel.gradle.utils.GameSide.SERVER)
 }
 
 repositories {
     maven("https://maven.terraformersmc.com/")
+    maven("https://maven.deftu.xyz/releases")
     mavenCentral()
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-
-    modImplementation("net.fabricmc:fabric-language-kotlin:1.8.2+kotlin.1.7.10")
+    modImplementation("xyz.deftu:DeftuLib-${mcData.versionStr}:1.0.0")
 }
 
 tasks {
