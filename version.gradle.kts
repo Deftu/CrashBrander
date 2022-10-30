@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    modImplementation("xyz.deftu:DeftuLib-${mcData.versionStr}:1.0.0")
+    modImplementation("xyz.deftu:DeftuLib-${mcData.versionStr}:1.0.1")
 }
 
 tasks {
