@@ -15,6 +15,7 @@ object ConfigParser {
                 throw InvalidConfigException("Config should be a JSON object!")
 
             var enabled = true
+            var updateChecking = true
             var otherConfig: OtherConfigType? = null
             var printTypes = listOf(Config.PrintType.CRASH)
             var name: String? = null
@@ -38,6 +39,11 @@ object ConfigParser {
                         if (token != JsonToken.BOOLEAN)
                             throw InvalidConfigException("Config#enabled should be a boolean!")
                         enabled = reader.nextBoolean()
+                    }
+                    "update_checking" -> {
+                        if (token != JsonToken.BOOLEAN)
+                            throw InvalidConfigException("Config#updateChecking should be a boolean!")
+                        updateChecking = reader.nextBoolean()
                     }
                     "other_config", "other" -> {
                         if (token != JsonToken.STRING)
@@ -93,7 +99,7 @@ object ConfigParser {
             }
 
             reader.endObject()
-            return Config(enabled, otherConfig, printTypes, name, version, author, website, support)
+            return Config(enabled, updateChecking, otherConfig, printTypes, name, version, author, website, support)
         }
     }
 

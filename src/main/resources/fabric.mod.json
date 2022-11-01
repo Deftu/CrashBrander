@@ -27,6 +27,12 @@
                 "adapter": "kotlin",
                 "value": "xyz.deftu.crashbrander.CrashBranderPreLaunch"
             }
+        ],
+        "update_checker": [
+            {
+                "adapter": "kotlin",
+                "value": "xyz.deftu.crashbrander.CrashBranderUpdater"
+            }
         ]
     },
     "mixins": [
@@ -35,7 +41,7 @@
     "depends": {
         "fabricloader": ">=0.14.9",
         "fabric-language-kotlin": ">=1.8.2+kotlin.1.7.10",
-        "deftulib": ">=1.0.0",
+        "deftulib": ">=1.1.0",
         "minecraft": "~${minor_mc_version}",
         "java": ">=17"
     }

@@ -26,7 +26,7 @@ pluginManagement {
         kotlin("jvm") version(kotlin)
         kotlin("plugin.serialization") version(kotlin)
 
-        val ucgt = "1.12.4"
+        val ucgt = "1.13.8"
         id("xyz.enhancedpixel.gradle.multiversion-root") version(ucgt)
     }
 }

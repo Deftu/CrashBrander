@@ -1,3 +1,8 @@
+import com.modrinth.minotaur.dependencies.DependencyType
+import com.modrinth.minotaur.dependencies.ModDependency
+import xyz.enhancedpixel.gradle.tools.CurseRelation
+import xyz.enhancedpixel.gradle.tools.CurseRelationType
+
 plugins {
     java
     kotlin("jvm")
@@ -6,10 +11,7 @@ plugins {
     id("xyz.enhancedpixel.gradle.tools")
     id("xyz.enhancedpixel.gradle.tools.loom")
     id("xyz.enhancedpixel.gradle.tools.shadow")
-}
-
-loomHelper {
-    disableRunConfigs(xyz.enhancedpixel.gradle.utils.GameSide.SERVER)
+    id("xyz.enhancedpixel.gradle.tools.releases")
 }
 
 repositories {
@@ -20,7 +22,28 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    modImplementation("xyz.deftu:DeftuLib-${mcData.versionStr}:1.0.1")
+    modImplementation(include("xyz.deftu:DeftuLib-${mcData.versionStr}:1.1.2")!!)
+}
+
+
+releases {
+    modrinth {
+        projectId.set("C9eIZ8sb")
+        dependencies.set(listOf(
+            ModDependency("P7dR8mSH", DependencyType.REQUIRED),
+            ModDependency("Ha28R6CL", DependencyType.REQUIRED),
+            ModDependency("mOgUt4GM", DependencyType.REQUIRED)
+        ))
+    }
+
+    curseforge {
+        projectId.set("657052")
+        relations.set(listOf(
+            CurseRelation("fabric-api", CurseRelationType.REQUIRED),
+            CurseRelation("fabric-language-kotlin", CurseRelationType.REQUIRED),
+            CurseRelation("modmenu", CurseRelationType.REQUIRED)
+        ))
+    }
 }
 
 tasks {

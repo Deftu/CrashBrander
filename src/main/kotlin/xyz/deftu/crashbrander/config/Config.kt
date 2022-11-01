@@ -8,6 +8,7 @@ import java.io.File
 
 data class Config(
     val enabled: Boolean,
+    val updateChecking: Boolean,
     val otherConfig: OtherConfigType?,
     val printTypes: List<PrintType>,
     val name: String?,
