@@ -5,10 +5,7 @@
     "injectors": {
         "defaultRequire": 1
     },
-    "client": [
-        "MinecraftClientMixin"
-    ],
-    "server": [
-        "IntegratedServerMixin"
+    "mixins": [
+        "CrashReportMixin"
     ]
 }

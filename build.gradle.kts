@@ -1,5 +1,5 @@
 plugins {
-    id("xyz.enhancedpixel.gradle.multiversion-root")
+    id("xyz.deftu.gradle.multiversion-root")
 }
 
 preprocess {

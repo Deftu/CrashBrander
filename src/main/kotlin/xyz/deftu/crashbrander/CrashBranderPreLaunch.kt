@@ -12,7 +12,7 @@ object CrashBranderPreLaunch : PreLaunchEntrypoint {
         val name = config.getModpackName()
         val version = config.getModpackVersion()
         CrashBranderConstants.logger.info("CrashBrander log printing:\n${buildString {
-            append("-- Pack Branding --").append("\n")
+            append("-- Modpack Branding --").append("\n")
             append("Details:").append("\n")
             appendInfo(name != null, "Name", name)
             appendInfo(version != null, "Version", version)

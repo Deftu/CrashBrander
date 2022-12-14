@@ -2,6 +2,7 @@ package xyz.deftu.crashbrander
 
 import net.fabricmc.api.ModInitializer
 import net.minecraft.util.crash.CrashReport
+import net.minecraft.util.crash.CrashReportSection
 import xyz.deftu.crashbrander.config.Config
 
 object CrashBrander : ModInitializer {
@@ -9,12 +10,13 @@ object CrashBrander : ModInitializer {
     }
 
     @JvmStatic
-    fun addBranding(report: CrashReport) {
+    fun addBranding(
+        section: CrashReportSection
+    ) {
         val config = Config.INSTANCE
         if (!config.enabled || !config.printTypes.contains(Config.PrintType.CRASH))
             return
 
-        val section = report.addElement("Pack Branding")
         val name = config.getModpackName()
         val version = config.getModpackVersion()
         if (!name.isNullOrBlank()) section.add("Name", name)

@@ -3,7 +3,7 @@ import groovy.lang.MissingPropertyException
 pluginManagement {
     repositories {
         // Repositories
-        maven("https://maven.enhancedpixel.xyz/releases")
+        maven("https://maven.deftu.xyz/releases")
         maven("https://maven.fabricmc.net")
         maven("https://maven.architectury.dev/")
         maven("https://maven.minecraftforge.net")
@@ -16,7 +16,7 @@ pluginManagement {
         mavenCentral()
 
         // Snapshots
-        maven("https://maven.enhancedpixel.xyz/snapshots")
+        maven("https://maven.deftu.xyz/snapshots")
         maven("https://s01.oss.sonatype.org/content/groups/public/")
         mavenLocal()
     }
@@ -26,8 +26,8 @@ pluginManagement {
         kotlin("jvm") version(kotlin)
         kotlin("plugin.serialization") version(kotlin)
 
-        val ucgt = "1.13.8"
-        id("xyz.enhancedpixel.gradle.multiversion-root") version(ucgt)
+        val ucgt = "1.1.2"
+        id("xyz.deftu.gradle.multiversion-root") version(ucgt)
     }
 }
 
