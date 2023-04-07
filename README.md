@@ -12,6 +12,8 @@
 </center>
 </div>
 
+[![BisectHosting](https://www.bisecthosting.com/partners/custom-banners/8fb6621b-811a-473b-9087-c8c42b50e74c.png)](https://bisecthosting.com/deftu)
+
 ## Why?
 Debugging modpacks is difficult, and a fair bit of difficulty comes from varying modpack versions, and users using outdated versions of modpacks. This mod fixes that by allowing modpacks to include their name, version and support link directly inside the crash report!
 
